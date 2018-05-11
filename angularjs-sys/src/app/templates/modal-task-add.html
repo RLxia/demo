@@ -1,0 +1,26 @@
+<div class="dr-form">
+    <div class="modal-header">
+        <h4 class="modal-title">任务添加/编辑</h4>
+    </div>
+    <div class="modal-body modal-box dr-tb-container" style="padding: 20px 0;margin: 0;">
+        <form class="form-horizontal" name="taskForm" method="post" novalidate>
+            <div class="form-group">
+                <label class="control-label col-xs-4">名称:</label>
+                <div class="col-xs-6">
+                    <input type="text" 
+                       class="form-control" 
+                       placeholder='名称'
+                       ng-model="formData.name" />
+                </div>
+                
+            </div>
+            
+        </form>
+        <div class="modal-footer">
+                <div class="dr-btn-bar">
+                    <button class="btn btn-primary btn-plr-35" type="button" ng-click="ok()">保存</button>
+                    <button class="btn btn-secondary btn-plr-35" type="button" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+    </div>
+</div>

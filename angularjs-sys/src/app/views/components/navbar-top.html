@@ -1,0 +1,29 @@
+<nav class="navbar-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><img src="../../../images/logo2.jpg" /> </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active" ng-repeat="menu in $ctrl.menu track by menu.id">
+            <a ui-sref="{{menu.state}}">{{menu.name}}</a>
+        </li>
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="/#/login">Exit</a></li>
+
+        <li class="narbar-li">
+          <select name="list" 
+            ng-model="list" 
+            ng-init="list = lists[0].value"
+            ng-options="v.value as v.name for v in lists"
+            ng-change="changeSelect(list)"
+            >
+            </select>
+        </li>
+      </ul> -->
+      
+    </div> 
+  </div>
+</nav>
+

@@ -1,0 +1,66 @@
+
+angular.module('main.filter', [])
+
+.filter("sexFilter", [function(){
+    return function(input){
+        switch (input) {
+            case 'M':
+                return "男";
+                break;
+            case 'W':
+                return "女";
+                break;
+        }
+    }
+}])
+.filter("trueFilter", [function(){
+    return function(input){
+        switch (input) {
+            case 'Y':
+                return "是";
+                break;
+            case 'N':
+                return "否";
+                break;
+        }
+    }
+}])
+.filter("selectFilter", ['MapService', function(MapService){
+    return function(input, key){
+        if (input) {
+            var data = MapService.get(key);
+            if (data) {
+                var result = [];
+                for (var i=0; i<input.length; i++) {
+                    var obj = _.find(data, {'value':input[i]});
+                    if (obj) {
+                        result.push(obj.text);
+                    }
+                }
+                return result.join(',');
+            } else {
+                if (input) {
+                    return input.join(',');
+                }
+                return input;
+            }
+        }
+    }
+}])
+.filter("toString", [function(){
+    return function(input){
+        return input.toString();
+    }
+}])
+.filter("toNumber", [function(){
+    return function(input){
+        return parseInt(input);
+    }
+}])
+.filter(
+    'to_trusted', ['$sce', function ($sce) {
+        return function (text) {
+            return $sce.trustAsHtml(text);
+        }
+    }]
+)

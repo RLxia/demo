@@ -1,0 +1,20 @@
+本项目是用webpack搭建的项目，需要用到的工具有nodejs,git,mysql。
+1.下载安装nodejs,git,mysql。
+2.安装好之后，进入angularjs-sys文件夹，在空白出右键，选择git bash。
+3.输入命令行 npm install 或者 cnpm install
+  （如果不成功 可以先安装淘宝NPM镜像cnpm,
+  输入命令:npm install -g cnpm --registry=https://registry.npm.taobao.org
+  如果输入npm install安装失败，再次安装需要先输入命令 rm -rm node_modules 把node_modules文件删除
+  再尝试用 cnpm install 安装）
+4.安装成功之后，输入 npm start 启动服务，启动成功在浏览器输入：127.0.0.1:8080 可以看到登陆页面。
+
+	
+5.登陆账号密码都是123。但是需要先起后端服务，后端服务文件夹server,
+ 进入server文件夹，在空白处右键，打开git bash ,输入命令git install
+安装完成后，输入 node server.js 启动后端服务。
+6.server 文件夹里面有schema.sql数据备份，需要还原到mysql。
+
+注：如果有自己的后端服务，可以忽略5。 
+    服务器接口可以在webpack.config.prod.babel.js里面修改。
+    src>app 接口 basic.server.js，config.js	   
+  

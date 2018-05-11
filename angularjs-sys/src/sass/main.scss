@@ -1,0 +1,531 @@
+$lightColor: #ffffff;
+$darkColor: #000000;
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+/* 去除默认边框 */ 
+fieldset, img {
+    border: 0;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {
+    list-style: none;
+}
+
+/* 正常链接 未访问 */
+a:link, a:visited {
+    color:lighten($darkColor,70%);
+    text-decoration: none;
+}
+
+/* 鼠标悬停 */
+a:hover {
+    color:lighten($darkColor,70%);
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+    text-decoration: none;
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Open Sans",serif;
+    background: transparent;
+}
+
+h1 {
+    font-family: "Abel", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+}
+.mainView {
+    width:100%;
+    height:100%;
+    .main-container{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:0;
+        right:0;
+        overflow:hidden;
+        .container-top {
+          width:100%;
+          height:80px;
+          background: $lightColor;
+          //background: lighten($darkColor,95%);
+          & > img {
+              max-height: 80px;
+              margin-left: 30px;
+          }
+        }
+        .container-center{
+          background-image: url(../images/login_bg.png);
+          //background: #f60;
+          width:100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-size:cover;
+          //background-position: center;
+          .panel-box {
+              margin-top:50px;
+              width: 80%;
+              & > h2 {
+                  color:#0193de;
+              }
+              .has-error {
+                .input-group-addon {
+                    color: #a94442;
+                    background-color: #f2dede;
+                    border-color: #a94442;
+                }
+                .form-control {
+                    background-color: $lightColor;
+                }
+                }
+                .has-success {
+                    .input-group-addon {
+                        color: #3c763d;
+                        background-color: #dff0d8;
+                        border-color: #3c763d;
+                    }
+                    .form-control {
+                        background-color: $lightColor;
+                    }
+                }
+                .error-text {
+                    color: #a94442;
+                }
+          }
+        }
+    }
+}
+
+.panel {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.margin-base-vertical {
+    margin: 40px 0;
+}
+
+.paddingTop50 {
+    padding-top: 50px;
+}
+
+.module {
+    margin-bottom: 30px;
+}
+.tags {
+    line-height: 30px;
+}
+.posts>li {
+    margin-bottom: 50px;
+}
+.footer {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+
+/****************************new layout*****************************************/
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ */
+.navbar-top {
+  border: 0;
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index:1001;
+  background:#f5f5f5;
+  a {
+      color:#333;
+  }
+  #navbar {
+      .narbar-li {
+          margin: 15px;
+      }
+  } 
+.navbar-brand{
+  img{
+   margin:0px;
+   width:30px;
+   height:30px;
+    }    
+    }
+}
+
+
+/*
+ * Sidebar
+ */
+
+  .sidebar {
+    position: fixed;
+    width:15%;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+   // padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    background-color: #101010;
+    border-right: 1px solid #eee;
+    .sidebar-ul {
+        width:100%;
+        margin:0;
+        padding:0;
+        li {
+            &>a {
+                text-decoration: none;
+                color:$lightColor;
+                padding:15px;
+            }
+            & > a:hover,
+            & > a:focus {
+                    background: #253448;
+                    color:lighten($lightColor,80%);
+                }
+        }
+        .active {
+            a {
+                background: #253448;
+                color:lighten($lightColor,80%);
+            }
+        }
+    }
+  }
+
+
+/*
+ * Main content
+ */
+.container-overview {
+    margin-top:50px;
+    margin-left: 15%;
+    .main {
+        padding-top: 10px;
+        .page-header {
+            padding-bottom: none;; 
+            margin: 0; 
+            border-bottom: 1px solid #eee;
+        }
+        .table-task {
+            .operatebtn {
+                cursor: pointer;
+                background: #428bca;
+                border: none;
+            }
+        }
+    }
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+/*table sort start*/
+.sort-table thead th .title-position {
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+.sort-table thead th .icon-position {
+    background-repeat:no-repeat;
+    background-position: 0 3px;
+    float: right;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.sort-table thead th .both {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAAkElEQVQoz7X QMQ5AQBCF4dWQSJxC5wwax1Cq1e7BAdxD5SL+Tq/QCM1oNiJidwox0355mXnG/DrEtIQ6azioNZQxI0ykPhTQIwhCR+BmBYtlK7kLJYwWCcJA9M4qdrZrd8pPjZWPtOqdRQy320YSV17OatFC4euts6z39GYMKRPCTKY9UnPQ6P+GtMRfGtPnBCiqhAeJPmkqAAAAAElFTkSuQmCC');
+}
+
+.sort-table thead th .asc {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZ0lEQVQ4y2NgGLKgquEuFxBPAGI2ahhWCsS/gDibUoO0gPgxEP8H4ttArEyuQYxAPBdqEAxPBImTY5gjEL9DM+wTENuQahAvEO9DMwiGdwAxOymGJQLxTyD+jgWDxCMZRsEoGAVoAADeemwtPcZI2wAAAABJRU5ErkJggg==');
+}
+
+.sort-table thead th .desc {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAZUlEQVQ4y2NgGAWjYBSggaqGu5FA/BOIv2PBIPFEUgxjB+IdQPwfC94HxLykus4GiD+hGfQOiB3J8SojEE9EM2wuSJzcsFMG4ttQgx4DsRalkZENxL+AuJQaMcsGxBOAmGvopk8AVz1sLZgg0bsAAAAASUVORK5CYII= ');
+}
+/*table sort end*/
+
+/*
+  global loading
+ */
+.mask-loading .loading-icon {
+    -webkit-animation: rotate 1s linear infinite;
+    -o-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -20px 0 0 -20px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #37a884 #37a884 #fff #fff;
+    opacity: .9;
+    border-radius: 50px;
+}
+
+/********************************Select File or Drop File*****************************************/
+.upload-buttons input[type="file"] {
+    width: 6.3em \0/ IE9;
+}
+
+.upload-button {
+    Height: 26px;
+    line-height: 30px;
+    padding: 0 10px;
+    background: #CCC;
+    appearance: button;
+    -moz-appearance: button; /* Firefox */
+    -webkit-appearance: button; /* Safari and Chrome */
+    position: relative;
+    text-align: center;
+    top: 7px;
+    cursor: pointer;
+}
+
+.sel-file {
+    padding: 1px 5px;
+    font-size: smaller;
+    color: grey;
+}
+
+.response {
+    padding: 0;
+    padding-top: 10px;
+    margin: 3px 0;
+    clear: both;
+    list-style: none;
+}
+
+.response .sel-file li, .response .reqh {
+    color: blue;
+    padding-bottom: 5px;
+}
+
+fieldset {
+    border: 1px solid #DDD;
+    width: 620px;
+    padding: 10px;
+    line-height: 23px;
+}
+
+fieldset label {
+    /*font-size: smaller;*/
+}
+
+.progress {
+    display: inline-block;
+    width: 600px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    text-align: center;
+    padding: 50px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.drop-box.dragover {
+    border: 5px dashed blue;
+}
+
+.drop-box.dragover-err {
+    border: 5px dashed red;
+}
+
+/* for IE*/
+.js-fileapi-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+button {
+    padding: 1px 5px;
+    font-size: smaller;
+    margin: 0 3px;
+}
+
+.ng-v {
+    float: right;
+}
+
+.thumb {
+    float: left;
+    width: 18px;
+    height: 18px;
+    padding-right: 10px;
+}
+
+form .thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+
+.edit-area {
+    font-size: 14px;
+    background: black;
+    color: #f9f9f9;
+    padding: 5px 1px;
+}
+
+#htmlEdit {
+    margin-bottom: 25px;
+}
+
+.edit-div {
+    font-size: smaller;
+}
+
+.CodeMirror {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+form button {
+    padding: 3px 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.sub {
+    font-size: smaller;
+    color: #777;
+    padding-top: 5px;
+    padding-left: 25px;
+}
+
+.err {
+    font-size: 12px;
+    color: #C53F00;
+    margin: 15px;
+    padding: 15px;
+    background-color: #F0F0F0;
+    border: 1px solid black;
+}
+
+.s3 {
+    font-size: smaller;
+    color: #333;
+    margin-left: 20px;
+}
+
+.s3 fieldset {
+    border: 1px solid #AAA;
+}
+
+.s3 label {
+    width: 180px;
+    display: inline-block;
+}
+
+.s3 input {
+    width: 300px;
+}
+
+.s3 .helper {
+    margin-left: 5px;
+}
+
+.howto {
+    margin-left: 10px;
+    line-height: 20px;
+}
+
+.server {
+    margin-bottom: 20px;
+}
+
+.srv-title {
+    font-weight: bold;
+    padding: 5px 0 10px 0;
+}
+
+:not(output):-moz-ui-invalid {
+    box-shadow: none;
+}
+
+.preview {
+    clear: both;
+}
+
+.preview img, .preview audio, .preview video {
+    max-width: 300px;
+    max-height: 150px;
+    float: right;
+}
+
+.custom {
+    font-size: 14px;
+    margin-left: 20px;
+}
+/********************************Select File or Drop File end*****************************************/

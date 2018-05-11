@@ -1,0 +1,59 @@
+<div class="main-container">
+    <div qk-alert></div>
+    <div class="container-top"><img src="../../images/logo.jpg" /></div>
+    <div class="container-center">
+        <div class="col-md-6  col-lg-6  col-xs-6 col-md-offset-6 col-xs-offset-6 col-lg-offset-6 " ng-controller="LoginController">
+            <div class="panel-box">
+                <h2 class="margin-base-vertical">欢迎登录</h2>
+                <form name="myForm" class="margin-base-vertical" ng-submit="login()" >
+                    <p class="input-group"
+                    ng-class="{'has-success': myForm.uname.$valid && myForm.uname.$dirty,'has-error':!myForm.uname.$valid && myForm.uname.$dirty}">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" 
+                            class="form-control" 
+                            name="uname" 
+                            ng-maxlength="10" 
+                            ng-minlength="3"
+                            placeholder="用户名" 
+                            ng-model="formData.uname" required />
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                                ng-show="myForm.uname.$valid && myForm.uname.$dirty"></span>
+                            <span class="glyphicon glyphicon-remove form-control-feedback"
+                                ng-show="!myForm.uname.$valid && myForm.uname.$dirty"></span>
+                    </p>
+                    <label  ng-messages="myForm.uname.$dirty && myForm.uname.$error">
+                        <b class="error-text" ng-message="required">用户名是必须的。</b>
+                        <b class="error-text" ng-message="maxlength">用户名最大为10位。</b>
+                        <b class="error-text" ng-message="minlength">用户名最小为3位。</b>
+                    </label>
+                    <p class="input-group"
+                    ng-class="{'has-success': myForm.pwd.$valid && myForm.pwd.$dirty,'has-error':!myForm.pwd.$valid && myForm.pwd.$dirty}">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" 
+                            class="form-control" 
+                            name="pwd" 
+                            ng-maxlength="10" 
+                            ng-minlength="3"
+                            placeholder="密码" 
+                            ng-model="formData.pwd" required />
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                                ng-show="myForm.pwd.$valid && myForm.pwd.$dirty"></span>
+                            <span class="glyphicon glyphicon-remove form-control-feedback"
+                                ng-show="!myForm.pwd.$valid && myForm.pwd.$dirty"></span>
+                    </p>
+                    <label  ng-messages="myForm.pwd.$dirty && myForm.pwd.$error">
+                        <b class="error-text" ng-message="required">密码是必须的。</b>
+                        <b class="error-text" ng-message="maxlength">密码最大为10位。</b>
+                        <b class="error-text" ng-message="minlength">密码最小为3位。</b>
+                    </label>
+                    <p class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$error.required || myForm.$dirty && myForm.$invalid"">登 录</button>
+                    </p>
+                    </span>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

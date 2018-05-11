@@ -1,0 +1,28 @@
+<div class="container-overview">
+  <div class="main">
+    <h1 class="page-header">图表列表</h1>
+
+    <div class="row placeholders" ng-controller="EChartsController" style="margin-top:20px;">
+      <div  class="col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">列表统计</div>
+            <div class="panel-body">
+                <div bar-y id="main" legend="legend" item="item" data="data" style="height:250px"></div>
+                
+            </div>
+         </div>
+      </div>
+      <div  class="col-md-6 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">设备数量统计</div>
+            <div class="panel-body">
+                <div e-charts id="main2" data="options2" style="height:250px"></div>    
+            </div>
+         </div>
+        
+      </div>
+      
+    </div>
+
+  </div>
+</div>

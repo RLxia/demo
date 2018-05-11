@@ -1,0 +1,6 @@
+<ul class="pager">
+  <li><button type="button" class="btn btn-primary" ng-disabled="pgs.currentPg==0" ng-click="first($event)">首页{{pgs.currentPg}}</button></li>
+  <li><button type="button" class="btn btn-primary" ng-disabled="pgs.currentPg==0" ng-click="prev($event)">上一页</button></li>
+  <li><button type="button" class="btn btn-primary" ng-disabled="pgs.currentPg==pgs.lastPg" ng-click="next($event)">下一页</button></li>
+  <li><button type="button" class="btn btn-primary" ng-disabled="pgs.currentPg==pgs.lastPg" ng-click="last($event)">末页{{pgs.lastPg}}</button></li>
+</ul>
